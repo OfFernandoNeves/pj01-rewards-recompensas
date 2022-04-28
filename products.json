@@ -1,0 +1,70 @@
+{
+    "groups": [
+        {
+            "id": 1,
+            "name": "RESGATES",
+            "products": [
+                {
+                    "id": 2,
+                    "name": "RESTAURANTE NOSTRA PIZZA",
+                    "image": "assets/img/img-gifts/pizza-nostra.png",
+                    "description": "Experiência gastronômica na conceituada pizzaria Nostra Pizza Voucher: R$ 1.100,00.",
+                    "points": 23700 
+                },
+                {
+                    "id": 3,
+                    "name": "PERFUME CREED VETIVER",
+                    "image": "assets/img/img-gifts/vetiver.png",
+                    "description": "Creed Vetiver é um poderoso perfume com aroma marcante e impactante. Um convite atemporal para impressionar onde quer que você esteja.",
+                    "points": 10700
+                },
+                {
+                    "id": 4,
+                    "name": "KIT WHISKY ROYALE SALUT",
+                    "image": "assets/img/img-gifts/royale-salut.png",
+                    "description": "Um whisky complexo e sofisticado para saudar aquele momento mais especial com as pessoas que você ama",
+                    "points": 23700
+                },
+                {
+                    "id": 5,
+                    "name": "JANTAR TERRAZZO ITALIA",
+                    "image": "assets/img/img-gifts/terrazzo.png",
+                    "description": "Experiência de Menu Degustação no restaurante mais antigo do Estado de São Paulo Voucher: R$ 1.800,00",
+                    "points": 25700
+                },
+                {
+                    "id": 6,
+                    "name": "SAVEUR BISTROT",
+                    "image": "assets/img/img-gifts/bistrot.png",
+                    "description": "Experiência gastronômica no bistrô Saveur Bistrot para duas pessoas Voucher: R$ 2.300,00", 
+                    "points": 25700
+                },
+                {
+                    "id": 7,
+                    "name": "LAPINHA SPA",
+                    "image": "assets/img/img-gifts/spa-lapinha.png",
+                    "description": "Lapinha é um spa brasileiro inspirado nos melhores spas relaxantes da Tailândia. Aproveite 02 diárias neste paraíso Voucher no valor de R$ 2.300,00",
+                    "points": 25700
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "DESCONTOS ESPECIAIS",
+            "products": [
+                {
+                    "id": 9,
+                    "image": "assets/img/Rectangle 60.png"
+                },
+                {
+                    "id": 10,
+                    "image": "assets/img/Rectangle 61.png"
+                },
+                {
+                    "id": 11,
+                    "image": "assets/img/Rectangle 63.png"
+                }
+            ]
+        }
+    ]
+} 
