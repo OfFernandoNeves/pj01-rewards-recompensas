@@ -15,7 +15,7 @@ btnCloseGiftEl.addEventListener('click', closeSidebar)
 
 const fetchProducts = () => {
     const groupsRootEl = document.querySelector('#groups-root')
-   fetch("http://127.0.0.1:5500/products.json") 
+   fetch('http://127.0.0.1:5500/products.json') 
     .then(res => res.json())
     .then(data => {
         groupsRootEl.innerHTML = ''
@@ -40,11 +40,14 @@ const getSectionElement = (group) => {
         const cardWrapEl = document.createElement('article')
         cardWrapEl.classList.add('card')
         cardWrapEl.innerHTML = 
-            `<img src="${product.image}" width="316" height="193" alt="${product.name}"/>
-            <div class="card-content">
-                ${product.name ? `<h4>${product.name}</h4>` : ''}
-                ${product.description ? `<p>${product.description}</p>` : ''}
-                ${product.points ? `<h5 class="points">Por ${product.points} pontos</h5>` : ''}
+            `<img src="${product.image}" width="316" height="193" alt="
+                       ${product.name}"/><div class="card-content">
+                       ${product.name ? `<h4>
+                       ${product.name}</h4>` : ''}
+                       ${product.description ? `<p>
+                       ${product.description}</p>` : ''}
+                       ${product.points ? `<h5 class="points">Por 
+                       ${product.points} pontos</h5>` : ''}
             <button class="btn">Resgatar</button>
         </div>`
 
@@ -68,15 +71,15 @@ const addToCart = newProduct => {
         productsCart.push({
         ...newProduct,
         qty: 1
-    })
+        })
     } else {
         productsCart[productIndex].qty++
     }
+
     handleCartUpdate()
 }
 const handleCartUpdate = () => {
     if (productsCart.length > 0) {
-        console.log(productsCart)
         const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
         btnCartBadgeEl.classList.add('btn-cart-badge-show')
         let total = 0
