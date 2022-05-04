@@ -87,12 +87,19 @@
             //ATUALIZA A BADGE
             btnCartBadgeEl.classList.add('btn-cart-badge-show')
             let total = 0
+            let totalPointsGift = 0
             productsCart.forEach((product) => {
                 total = total + product.qty
+                totalPointsGift = totalPointsGift + product.points * product.qty
             })
+            //ATUALIZA A BADGE
+            console.log('totalPointsGift', totalPointsGift)
+            const cardTotalEl = document.querySelector('.card-total p:last-child')
+            cardTotalEl.textContent = totalPointsGift
             btnCartBadgeEl.textContent = total
             //EXIBE CARRINHO
             cardWithProductsEl.classList.add('card-with-products-show')
+            //ATUALIZA O TOTAL DO CARRINHO
             emptyCardEl.classList.remove('empty-gift-show')
             //EXIBIR ARRAY DE PRODUTOS CRIADOS
             cardProductsListEl.innerHTML = ''
