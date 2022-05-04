@@ -81,6 +81,7 @@
     const handleCartUpdate = () => {
         const emptyCardEl = document.querySelector('#empty-gift')
         const cardWithProductsEl = document.querySelector('#card-with-products')
+        const cardProductsListEl = cardWithProductsEl.querySelector('ul')
         if (productsCart.length > 0) {
             const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
             //ATUALIZA A BADGE
@@ -93,6 +94,22 @@
             //EXIBE CARRINHO
             cardWithProductsEl.classList.add('card-with-products-show')
             emptyCardEl.classList.remove('empty-gift-show')
+            //EXIBIR ARRAY DE PRODUTOS CRIADOS
+            cardProductsListEl.innerHTML = ''
+            productsCart.forEach((product) => {
+                const listItemEl = document.createElement('li')
+                listItemEl.innerHTML = `
+                <img src="${product.image}" alt="
+                          ${product.name}" width="70" height="70" /><div><p class="h4">
+                          ${product.name}</p><p class="points">
+                          ${product.points}</p>
+                </div>
+                <input class="form-input" type="number" value="${product.qty}" />
+                <button>
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>`
+                cardProductsListEl.appendChild(listItemEl)
+            })
     } else {
         //EXIBIR CARRINHO VAZIO
         emptyCardEl.classList.add('empty-gift-show')
