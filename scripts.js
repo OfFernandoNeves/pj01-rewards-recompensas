@@ -15,7 +15,7 @@
     
     const fetchProducts = () => {
         const groupsRootEl = document.querySelector('#groups-root')
-       fetch('http://127.0.0.1:5500/productslist.json') 
+       fetch('/productslist.json') 
         .then(res => res.json())
         .then(data => {
             groupsRootEl.innerHTML = ''
