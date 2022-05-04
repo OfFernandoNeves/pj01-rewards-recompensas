@@ -86,7 +86,15 @@
             return true
         })
         handleCartUpdate()
-
+    }
+    const updateItemQty = (id, newQty) => {
+        productsCart.findIndex((product) => {
+            if (product.id === id) {
+                return true
+            }
+            return false
+        })
+    handleCartUpdate() 
     }
     const handleCartUpdate = () => {
         const emptyCardEl = document.querySelector('#empty-gift')
@@ -94,7 +102,6 @@
         const cardProductsListEl = cardWithProductsEl.querySelector('ul')
         const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
         if (productsCart.length > 0) {
-            
             //ATUALIZA A BADGE
             btnCartBadgeEl.classList.add('btn-cart-badge-show')
             let total = 0
@@ -129,6 +136,11 @@
                 const btnRemoveEl = listItemEl.querySelector('button')
                 btnRemoveEl.addEventListener('click', () => {
                     removeOfGift(product.id)
+                })
+                const inputQtyEL = listItemEl.querySelector('input')
+                inputQtyEL.addEventListener('keyup', (event) => {
+                    updateItemQty(product.id, event.target.value)
+                    console.log('apertou', event.target.value)
                 })
                 cardProductsListEl.appendChild(listItemEl)
             })
