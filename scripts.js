@@ -83,10 +83,9 @@
             const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
             btnCartBadgeEl.classList.add('btn-cart-badge-show')
             let total = 0
-            productsCart.forEach(product => {
+            productsCart.forEach((product) => {
                 total = total + product.qty
             })
             btnCartBadgeEl.textContent = total
-        }
     }
-    addToCart()
+}
