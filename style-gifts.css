@@ -428,6 +428,9 @@ h5 {
     justify-content: center;
     align-items: center;
 }
+#empty-gift.empty-gift-show {
+    display: flex;
+}
 
 #empty-gift .fa-gift {
     font-size: 130px;
@@ -439,7 +442,9 @@ h5 {
     overflow: auto;
     display: none;
 }
-
+#card-with-products.card-with-products-show {
+    display:block;
+}
 #card-with-products ul {
     list-style: none;
 }

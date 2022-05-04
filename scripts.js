@@ -79,13 +79,24 @@
         handleCartUpdate()
     }
     const handleCartUpdate = () => {
+        const emptyCardEl = document.querySelector('#empty-gift')
+        const cardWithProductsEl = document.querySelector('#card-with-products')
         if (productsCart.length > 0) {
             const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
+            //ATUALIZA A BADGE
             btnCartBadgeEl.classList.add('btn-cart-badge-show')
             let total = 0
             productsCart.forEach((product) => {
                 total = total + product.qty
             })
             btnCartBadgeEl.textContent = total
+            //EXIBE CARRINHO
+            cardWithProductsEl.classList.add('card-with-products-show')
+            emptyCardEl.classList.remove('empty-gift-show')
+    } else {
+        //EXIBIR CARRINHO VAZIO
+        emptyCardEl.classList.add('empty-gift-show')
+        cardWithProductsEl.classList.remove('card-with-products-show')
     }
 }
+handleCartUpdate()
