@@ -62,7 +62,7 @@
     }
     fetchProducts()
     
-    const productsCart = []
+    let productsCart = []
     const addToCart = newProduct => {
         const productIndex = productsCart.findIndex(
             item => item.id === newProduct.id
@@ -78,12 +78,23 @@
     
         handleCartUpdate()
     }
+    const removeOfGift = id => {
+        productsCart = productsCart.filter((product) => {
+            if (product.id === id) {
+                return false
+            }
+            return true
+        })
+        handleCartUpdate()
+
+    }
     const handleCartUpdate = () => {
         const emptyCardEl = document.querySelector('#empty-gift')
         const cardWithProductsEl = document.querySelector('#card-with-products')
         const cardProductsListEl = cardWithProductsEl.querySelector('ul')
+        const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
         if (productsCart.length > 0) {
-            const btnCartBadgeEl = document.querySelector('.btn-cart-badge')
+            
             //ATUALIZA A BADGE
             btnCartBadgeEl.classList.add('btn-cart-badge-show')
             let total = 0
@@ -93,7 +104,6 @@
                 totalPointsGift = totalPointsGift + product.points * product.qty
             })
             //ATUALIZA A BADGE
-            console.log('totalPointsGift', totalPointsGift)
             const cardTotalEl = document.querySelector('.card-total p:last-child')
             cardTotalEl.textContent = totalPointsGift
             btnCartBadgeEl.textContent = total
@@ -114,10 +124,17 @@
                 <input class="form-input" type="number" value="${product.qty}" />
                 <button>
                     <i class="fa-solid fa-trash-can"></i>
-                </button>`
+                </button>
+                `
+                const btnRemoveEl = listItemEl.querySelector('button')
+                btnRemoveEl.addEventListener('click', () => {
+                    removeOfGift(product.id)
+                })
                 cardProductsListEl.appendChild(listItemEl)
             })
     } else {
+        //ESCONDER BADGE
+        btnCartBadgeEl.classList.remove('btn-cart-badge-show')
         //EXIBIR CARRINHO VAZIO
         emptyCardEl.classList.add('empty-gift-show')
         cardWithProductsEl.classList.remove('card-with-products-show')
