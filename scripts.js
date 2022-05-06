@@ -1,6 +1,7 @@
 {
     const giftSidebarEl = document.querySelector('.gift-sidebar')
-    function openSidebar() {
+    function openSidebar(event) {
+        event.stopPropagation()
         giftSidebarEl.classList.add('gift-sidebar-open')
     }
     function closeSidebar() {
@@ -11,6 +12,10 @@
 
     const btnCloseGiftEl = document.querySelector('#btn-close-gift')
     btnCloseGiftEl.addEventListener('click', closeSidebar)
+    document.addEventListener('click', closeSidebar)
+    giftSidebarEl.addEventListener('click', (event) => {
+        event.stopPropagation();
+    })
 }
 const fetchProducts = () => {
     const groupsRootEl = document.querySelector('#groups-root')
