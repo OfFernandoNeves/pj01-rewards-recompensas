@@ -179,3 +179,9 @@ const handleCartUpdate = (renderItens = true) => {
 }
 //ATUALIZA A QUANTIDADE DE PRODUTOS NA BADGE
 handleCartUpdate()
+window.addEventListener('storage', (event) => {
+    if (event.key === 'productsCart') {
+        productsCart = JSON.parse(event.newValue)
+        handleCartUpdate()
+    }
+})
