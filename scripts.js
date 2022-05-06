@@ -12,7 +12,6 @@
     const btnCloseGiftEl = document.querySelector('#btn-close-gift')
     btnCloseGiftEl.addEventListener('click', closeSidebar)
 }
-
 const fetchProducts = () => {
     const groupsRootEl = document.querySelector('#groups-root')
     fetch('/productslist.json')
@@ -63,6 +62,10 @@ const getSectionElement = (group) => {
 fetchProducts()
 
 let productsCart = []
+const savedProducts = localStorage.getItem('productsCart')
+if (savedProducts) {
+    productsCart = JSON.parse(savedProducts)
+}
 const addToCart = newProduct => {
     const productIndex = productsCart.findIndex(
         item => item.id === newProduct.id
@@ -87,9 +90,11 @@ const removeOfGift = id => {
     handleCartUpdate()
 }
 const updateItemQty = (id, newQty) => {
-    if (parseInt(newQty) > 5) {
-        alert('Quantidade extrapola o limite de 5.')
+    const newQtyNumber = parseInt(newQty)
+    if (isNaN(newQtyNumber)) {
+        return
     }
+    if (newQtyNumber > 0) {    
     const productIndex = productsCart.findIndex((product) => {
         if (product.id === id) {
             return true
@@ -97,10 +102,16 @@ const updateItemQty = (id, newQty) => {
         return false
     })
     productsCart[productIndex].qty = parseInt(newQty)
-    
     handleCartUpdate(false)
+  } else {
+      removeOfGift(id)
+  }
 }
 const handleCartUpdate = (renderItens = true) => {
+// SALVA CARRINHO NO LOCALSTORAGE
+    const productsCartString = JSON.stringify(productsCart)
+    localStorage.setItem('productsCart', productsCartString)
+
     const emptyCardEl = document.querySelector('#empty-gift')
     const cardWithProductsEl = document.querySelector('#card-with-products')
     const cardProductsListEl = cardWithProductsEl.querySelector('ul')
@@ -147,7 +158,6 @@ const handleCartUpdate = (renderItens = true) => {
                     updateItemQty(product.id, event.target.value)
                 })
                 inputQtyEL.addEventListener('keydown', (event) => {
-                    console.log('executou keydown', event.target.value)
                     if (event.key === '-' || event.key === '.' || event.key === ',') {
                         event.preventDefault()
                     }
@@ -167,4 +177,5 @@ const handleCartUpdate = (renderItens = true) => {
         cardWithProductsEl.classList.remove('card-with-products-show')
     }
 }
+//ATUALIZA A QUANTIDADE DE PRODUTOS NA BADGE
 handleCartUpdate()
