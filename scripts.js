@@ -7,6 +7,8 @@
     function closeSidebar() {
         giftSidebarEl.classList.remove('gift-sidebar-open')
     }
+
+    //FECHAR E ABRIR O BOTÃO ADICIONAR MAIS
     const btnGiftEl = document.getElementById('btn-gift')
     btnGiftEl.addEventListener('click', openSidebar)
 
@@ -16,6 +18,8 @@
     giftSidebarEl.addEventListener('click', (event) => {
         event.stopPropagation();
     })
+const btnAddMore = document.querySelector('#btn-add-more')
+btnAddMore.addEventListener('click', closeSidebar)
 }
 const fetchProducts = () => {
     const groupsRootEl = document.querySelector('#groups-root')
