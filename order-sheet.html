@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/coroa.ico"/>
+    <script src="https://kit.fontawesome.com/0bea0f702d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style-gifts.css"/>
+</head>
+<body class="dark-body">
+    <header class="header">
+        <div class="container">
+            <img src="./assets/img/logo-rewards.svg" alt width="168"  height="69" alt="logo da pagina uma coroa dourada" class="logo-header"/>
+            <button id="btn-gift">
+                <i class="fa-solid fa-gift"></i>
+                <span class="btn-cart-badge">3</span>
+            </button>
+        </div>
+    </header>
+    <main class="container">
+
+        <h2>CADASTRE-SE PARA FINALIZAR</h2>
+        <form class="form-checkout">
+            <div class="form-group">
+                <label for="input-name">Nome Completo</label>
+                <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="Informe seu nome completo" 
+                    id="input-name" />
+            </div>
+            <div class="form-group">
+                <label for="input-CPF">CPF</label>
+                <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="Informe seu CPF" 
+                    id="input-cpf" />
+            </div>
+            <div class="form-group">
+                <label for="input-email">E-mail</label>
+                <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="Informe seu e-mail" 
+                    id="input-email" />
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="input-cell">Celular</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="(99) 99999-9999" 
+                        id="input-cellphone" />
+                </div>
+                <div class="form-group">
+                    <label for="input-phone">Telefone</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="(99) 9999-9999" 
+                        id="input-phone" />
+                </div>
+                <div class="form-group">
+                    <label for="input-bday">Data de Nascimento</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="__/__/____" 
+                        id="input-bday" />
+                </div>
+                <div class="form-group">
+                    <label for="input-postalcode">CEP</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="99999-999" 
+                        id="input-postalcode" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-address">Endereço</label>
+                <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="Rua, Avenida, Alameda etc." 
+                    id="input-adress" />
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="input-number">Nº</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Nº:" 
+                        id="input-number" />
+                </div>
+                <div class="form-group">
+                    <label for="input-comple-residence">Complemento</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Casa, Apartamento, Bloco" 
+                        id="input-complement" />
+                </div>
+            </div>
+            <div class="form-row-uf">
+                <div class="form-group">
+                    <label for="input-city">Cidade</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Cidade, Munícipio, Distrito etc." 
+                        id="input-city" />
+                </div>
+                <div class="form-group">
+                    <label for="input-state">UF</label>
+                    <select
+                        name="state"
+                        class="form-input" 
+                        placeholder="UF:" 
+                        id="input-state">
+                        <option value disable selected>UF:*</option>
+                        <option value="AC">AC</option>
+                        <option value="AC">AM</option>
+                        <option value="AC">AP</option>
+                        <option value="AC">BA</option>
+                        <option value="AC">CE</option>
+                        <option value="AC">AL</option>
+                        <option value="AC">DF</option>
+                        <option value="AC">ES</option>
+                        <option value="AC">GO</option>
+                        <option value="AC">MA</option>
+                        <option value="AC">MG</option>
+                        <option value="AC">MS</option>
+                        <option value="AC">MT</option>
+                        <option value="AC">PA</option>
+                        <option value="AC">PB</option>
+                        <option value="AC">PE</option>
+                        <option value="AC">PI</option>
+                        <option value="AC">PR</option>
+                        <option value="AC">RJ</option>
+                        <option value="AC">RN</option>
+                        <option value="AC">RO</option>
+                        <option value="AC">RR</option>
+                        <option value="AC">RS</option>
+                        <option value="AC">SC</option>
+                        <option value="AC">SE</option>
+                        <option value="AC">SP</option>
+                        <option value="AC">TO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row-district-genero">
+                <div class="form-group">
+                    <label for="input-district">Bairro</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Informe o bairro" 
+                        id="input-district" />
+                </div>
+                    <div class="form-group">
+                        <label for="input-genere">Gênero</label>
+                        <select 
+                            name="genere"
+                            class="form-input" 
+                            placeholder="Informe seu gênero" 
+                            id="input-genere" >
+                            <option value disable selected>Gênero:*</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="nao-binario">Não-binário</option>
+                            <option value="nao-binario">Outros</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="input-password">Senha</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Cadastre uma senha" 
+                        id="input-password" />
+                </div>
+                <div class="form-group">
+                    <label for="input-password-confirm">Confirma a Senha</label>
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Repita a senha" 
+                        id="input-password-confirm" />
+                </div>
+            </div>
+            <div>
+                <input id="checkbox-privacypolicy" type="checkbox"/>
+                <span>Concordo com o regulamento e a política de dados</span>
+            </div>
+            <input
+                type="submit"
+                vaue="Cadastro"
+                class="btn btn-main"
+            />
+        </form>   
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-menu-icon">
+                    <i class="fa-solid fa-crown"> Fale conosco</i>
+                    <div class="footer-icon">
+                        <a href="https://api.whatsapp.com/send/?phone=5511981827334" target="blank"><i class="fa-brands fa-whatsapp"></i><a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="footer-menu">
+                        <a href="back-top.html">Voltar ao Topo</a>
+                        <a href="./index.html">Home</a>
+                        <a href="logout.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </footer>
+    <aside class="gift-sidebar">
+        <button id="btn-close-gift">
+            <i class="fa-solid fa-person-running"></i>
+        </button>
+        <div id="empty-gift">
+            <i class="fa-solid fa-gift"></i>
+            <p class="h3">Seu presente está vazio.</p>
+        </div>
+        <div id="card-with-products">
+            <p class="h2"> Resumo de brindes: </p>
+            <div class="scroll-overflow">
+                <ul>
+                </ul>
+                <div class="card-total">
+                    <p class="h4">TOTAL</p>
+                    <p>PONTOS</p>
+                </div>
+            <button class="btn btn-outline" id="btn-add-more">Adicionar mais brindes</button>
+            <a class="btn btn-main" href="./order-sheet.html">Finalizar</a>
+        </div>
+    </aside>
+</body>
+<script src="./scripts.js"></script>
+</html>

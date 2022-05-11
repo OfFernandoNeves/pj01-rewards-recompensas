@@ -14,15 +14,19 @@
 
     const btnCloseGiftEl = document.querySelector('#btn-close-gift')
     btnCloseGiftEl.addEventListener('click', closeSidebar)
+    
     document.addEventListener('click', closeSidebar)
     giftSidebarEl.addEventListener('click', (event) => {
         event.stopPropagation();
     })
 const btnAddMore = document.querySelector('#btn-add-more')
-btnAddMore.addEventListener('click', closeSidebar)
+if (btnAddMore) {
+    btnAddMore.addEventListener('click', closeSidebar)
 }
+
+}
+const groupsRootEl = document.querySelector('#groups-root')
 const fetchProducts = () => {
-    const groupsRootEl = document.querySelector('#groups-root')
     fetch('/productslist.json')
         .then(res => res.json())
         .then(data => {
@@ -68,8 +72,9 @@ const getSectionElement = (group) => {
 
     return sectionEl
 }
-fetchProducts()
-
+if (groupsRootEl) {
+    fetchProducts()
+}
 let productsCart = []
 const savedProducts = localStorage.getItem('productsCart')
 if (savedProducts) {
@@ -193,4 +198,33 @@ window.addEventListener('storage', (event) => {
         productsCart = JSON.parse(event.newValue)
         handleCartUpdate()
     }
+})
+const formCheckoutEl = document.querySelector('.form-checkout')
+formCheckoutEl?.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let text = 'CONFIRA OS RESGATES SELECIONADOS:\n-----------------------------------------\n'
+    let total = 0
+    productsCart.forEach(product => {
+        text += `*${product.qty}UN ${product.name}* - ${product.points}\n`
+        total += product.points * product.qty
+    })
+    text += '\n*Sujeita a validação de sua pontuação e disponibilidade no local escolhido ou itens escolhidos'
+    text += `\n*TOTAL: ${total} PONTOS UTILIZADOS`
+    text += '\n-----------------------------------------\n\n'
+    text += `${formCheckoutEl.elements['input-name'].value}\n\n`
+    text += `${formCheckoutEl.elements['input-cpf'].value}\n`
+    text += `${formCheckoutEl.elements['input-cellphone'].value}\n`
+    text += `${formCheckoutEl.elements['input-email'].value}\n`
+    text += `
+    ${formCheckoutEl.elements['input-adress'].value}, 
+    ${formCheckoutEl.elements['input-number'].value},
+    ${formCheckoutEl.elements['input-district'].value},
+    ${formCheckoutEl.elements['input-state'].value},
+    ${formCheckoutEl.elements['input-postalcode'].value}`
+    const complement = formCheckoutEl.elements['input-complement'].value
+    if (complement) {
+        text += ` - ${complement}`
+    }
+    const subDomain = window.innerWidth > 768 ? 'web' : 'api'
+    window.open(`https://${subDomain}.whatsapp.com/send?phone=5511981958630&text=${encodeURI(text)}`, '_blank')
 })
