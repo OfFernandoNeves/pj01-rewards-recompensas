@@ -15,7 +15,10 @@
 <body class="dark-body">
     <header class="header">
         <div class="container">
-            <img src="./assets/img/logo-rewards.svg" alt width="168"  height="69" alt="logo da pagina uma coroa dourada" class="logo-header"/>
+            <a class="logo-link" href="/">
+                <img src="./assets/img/logo-rewards.svg" alt width="168"  height="69" alt="logo da pagina uma coroa dourada"/>
+
+            </a>
             <button id="btn-gift">
                 <i class="fa-solid fa-gift"></i>
                 <span class="btn-cart-badge">3</span>
@@ -36,7 +39,7 @@
                     required />
             </div>
             <div class="form-group">
-                <label for="input-CPF">CPF *</label>
+                <label for="input-cpf">CPF *</label>
                 <input 
                     type="text" 
                     class="form-input" 
@@ -262,5 +265,6 @@
         </div>
     </aside>
 </body>
+<script src="https://unpkg.com/imask"></script>
 <script src="./scripts.js"></script>
 </html>

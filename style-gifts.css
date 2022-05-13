@@ -46,7 +46,7 @@ body {
     align-items: center;
 }
 
-.logo-header {
+.logo-link {
     margin-left: auto;
     margin-right: auto;
 }
@@ -114,7 +114,7 @@ body {
     display: flex;
 }
 @media (min-width: 992px) {
-    .logo-header {
+    .logo-link {
         height: 100px;
         width: auto;
     }

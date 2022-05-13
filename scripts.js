@@ -232,3 +232,20 @@ formCheckoutEl?.addEventListener('submit', (event) => {
     const subDomain = window.innerWidth > 768 ? 'web' : 'api'
     window.open(`https://${subDomain}.whatsapp.com/send?phone=5511981958630&text=${encodeURI(text)}`, '_blank')
 })
+
+//ADICIONA MASCARA QUE CORRIGE AUTOMATICAMENTE O NUMERO
+
+if (typeof IMask !== 'undefined') {
+const inputPhoneEl = document.querySelector('#input-phone')
+IMask(inputPhoneEl, {
+    mask: '(00) 00000-0000'
+})
+const inputCepEl = document.querySelector('#input-postalcode')
+IMask(inputCepEl, {
+    mask: '00000-000'
+})
+const inputCpfEl = document.querySelector('#input-cpf')
+IMask(inputCpfEl, {
+    mask: '000.000.000-00'
+})
+}
