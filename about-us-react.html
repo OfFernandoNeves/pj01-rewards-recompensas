@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBRE NÓS REACT</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+        crossorigin="anonymous">
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        function LogoRow () {
+            return <section className="text-center py-2">
+                <img src="./assets/img/logo-rewards.svg" widht="100" height="66" alt="logo rewards coroa dourada"/>
+                <h1 className="mt-2 mb-0">Feito especialmente para você</h1>
+            </section>
+        }
+        function AboutRow () {
+            return <section className="py-5">
+                <h2 className="text-center mb-3">Quem somos</h2>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="ratio ratio-16x9">
+                                <video controls autoPlay>
+                                    <source src="./assets/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mp4"/>
+                                    <source src="movie.ogg" type="video/ogg"/>
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-6 col-lg-8 col-xl-8 mt-3">
+                            <img src="./assets/img/women-luxury.jpg" alt="mulher de oculos escuros segurando sacolas de compras" className="img-fluid w-100 rounded mb-3"/>
+                        </div>
+                        <div className="col-12 col-sm-6 col-lg-8 col-xl-4 mt-2">
+                            REWARDS é o clube de vantagens e relacionamento para o consumidor final, onde a cada R$ 1,00 em compras nas lojas participantes, você ganha 1 ponto que pode ser trocado por diversos benefícios diretamente com o nosso setor responsável.
+                        </div>
+                        <a href="./order-sheet.html" target="_blank" className="btn btn-primary">FAÇA SEU CADASTRO</a>
+                        <p className="text-center">Para participar, solicite ao atendente que registre sua pontuação.</p>
+                    </div>
+                </div>
+            </section>
+        }
+        function LocationRow () {
+            return <section className="bg-danger text-white pt-5">
+        <div className="container">
+            <h2 className="text-center">Encontre as lojas participantes</h2>
+        </div>
+        <iframe className="d-block w-100 mt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7313.76982140203!2d-46.70424744609373!3d-23.572576600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a2da1311d7%3A0x15c6c7f0360ece1a!2sShopping%20Eldorado!5e0!3m2!1spt-BR!2sbr!4v1653064359587!5m2!1spt-BR!2sbr" width="600" height="300" style={{border : 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+        }
+        function App () {
+            return <React.Fragment> 
+                    <LogoRow />
+                    <AboutRow />
+                    <LocationRow/>
+            </React.Fragment>
+        }
+        const rootContainer = document.querySelector('#root')
+        ReactDOM.render(<App />, rootContainer)
+        
+        // const buttonEl = <button className="btn btn-primary" onClick={() => alert ('Oi')}>Teste</button>
+
+        // const buttonEl = React.createElement('button', {
+        //     className: 'btn btn-primary',
+        //     onClick: () => alert('oi')
+        // }, 'Teste')
+        </script>
+
+</body>
+</html>
